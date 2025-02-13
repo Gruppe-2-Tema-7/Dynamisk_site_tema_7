@@ -1,3 +1,14 @@
+/* colors */
+:root {
+  --beige: #f3f2ee;
+  --dark_beige: #fcf0ce;
+  --yellow: #ffd97c;
+  --green: #9fb98c;
+  --grey: #bebcb6;
+  --brown: #674c40;
+  --black: #363636;
+}
+
 /* fonts  */
 h1 {
   font-family: salthouse, sans-serif;
