@@ -12,13 +12,32 @@
 /* fonts  */
 h1 {
   font-family: salthouse, sans-serif;
+  font-size: 6rem; /*til desktop*/
 }
 
 h2 {
   font-family: the-seasons, sans-serif;
-  /* font-family: scotch-deck-condensed, sans-serif; */
+  font-size: 2.5rem; /*til desktop*/
 }
 
 p {
   font-family: bryant-web, sans-serif;
+  font-size: 1.5rem; /*til desktop*/
+}
+
+/*Knapper*/
+
+@media (max-width: 800px) {
+  /* fonts  */
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
 }
