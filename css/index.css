@@ -68,14 +68,32 @@ section,
   position: relative;
 }
 
+.background {
+  width: 250px;
+}
+
 .title {
   width: 350px;
   position: absolute;
   top: 40%;
 }
 
-.background {
-  width: 250px;
+.welcome_img {
+  padding-top: 120px;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vw;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.popular_title {
+  display: grid;
+  text-align: center;
+}
+
+.recipe_name {
+  padding-top: 20px;
 }
 
 .grid_1-1,
@@ -87,15 +105,6 @@ section,
   justify-items: center;
   text-align: center;
   padding-top: 20px;
-}
-
-.welcome_img {
-  padding-top: 120px;
-  object-fit: cover;
-  width: 100vw;
-  height: 100vw;
-  padding-left: 0;
-  margin-left: 0;
 }
 
 @media (min-width: 900px) {
