@@ -1,0 +1,38 @@
+/*************** Reset *********************/
+
+img {
+  width: 100%;
+}
+* {
+  margin: 0;
+}
+/*************** Reset ************/
+
+/************* Product List ************/
+.product_list_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 800px) {
+  .product_list_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* Subgrid opsætning */
+.product_item {
+  display: grid;
+  grid-template-columns: subgrid; /* Arver kolonneopsætning fra forælder */
+  grid-column: span 1; /* Hver item fylder én kolonne */
+}
+
+.product_item img {
+  width: 100%;
+  height: auto;
+}
