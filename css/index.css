@@ -18,47 +18,64 @@ section,
 }
 
 .title {
-  width: 700px;
+  width: 350px;
   position: absolute;
-  top: 30%;
+  top: 40%;
 }
 
 .background {
-  width: 500px;
+  width: 250px;
 }
 
 .grid_1-1,
-#welcome {
+.grid_1-1-1,
+.grid_1-1-1-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-}
-
-#welcome {
-  display: grid;
-  align-items: center;
-}
-
-.grid_1-1 {
   justify-items: center;
   text-align: center;
   padding-top: 20px;
 }
 
-.grid_1-1-1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  text-align: center;
-  padding-top: 20px;
+.welcome_img {
+  padding-top: 120px;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vw;
+  padding-left: 0;
+  margin-left: 0;
 }
 
-.grid_1-1-1-1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
-  text-align: center;
-  padding-top: 20px;
+@media (min-width: 900px) {
+  .background {
+    width: 500px;
+  }
+
+  .title {
+    width: 700px;
+  }
+
+  .welcome_img {
+    order: -1;
+    width: 100%;
+    height: 100%;
+  }
+
+  #welcome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .grid_1-1-1 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid_1-1-1-1 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .icon {
