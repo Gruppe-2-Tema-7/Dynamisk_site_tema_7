@@ -6,8 +6,7 @@ let mealTypeContainer = document.querySelector(".grid_1-1-1-1");
 // Fetch recipe data from the API
 fetch(`https://dummyjson.com/recipes`)
   .then((response) => response.json())
-  .then((data) => categorizeData(data.recipes)) // Extract the `recipes` array from the response
-  .catch((error) => console.error("Error fetching data:", error));
+  .then((data) => categorizeData(data.recipes)); // Extract the `recipes` array from the response
 
 function categorizeData(recipes) {
   console.log("Mine data er:", recipes); // Debugging: Logs fetched data
@@ -58,4 +57,36 @@ function categorizeData(recipes) {
   `
     )
     .join("");
+}
+
+// Sort recipes by rating in descending order and get top 3
+const popular = document.querySelector(".popular");
+
+fetch(`https://dummyjson.com/recipes`)
+  .then((response) => response.json())
+  .then((data) => mostPopular(data));
+
+function mostPopular(recipes) {
+  const topRecipes = recipes.recipes
+    .filter((recipe) => ["Italian", "Mediterranean", "Greek"].includes(recipe.cuisine))
+    .sort((a, b) => b.rating - a.rating) // Sort by highest rating first
+    .slice(0, 3); // Get top 3
+
+  popular.innerHTML = ` 
+    <div class="grid_1-1-1 popular-grid">
+      ${topRecipes
+        .map(
+          (recipe) => `
+        <div class="popular-item">
+          <a href="single_recipe.html?id=${recipe.id}">
+            <img src="${recipe.image}" alt="${recipe.name}">
+            <h3>${recipe.name}</h3>
+            <p>Rating: ${recipe.rating} / 5</p>
+          </a>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
+  `;
 }
