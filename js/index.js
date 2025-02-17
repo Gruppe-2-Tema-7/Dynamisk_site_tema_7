@@ -27,7 +27,7 @@ function categorizeData(recipes) {
     .map(
       (difficulty) => `
     <a href="category_list.html?difficulty=${difficulty}">
-      <img class="icon" src="img/index/${difficulty.toLowerCase()}_icon.webp" alt="${difficulty} icon">
+      <img class="icon grow" src="img/index/${difficulty.toLowerCase()}_icon.webp" alt="${difficulty} icon">
       <p>${difficulty}</p>
     </a>
   `
@@ -39,7 +39,7 @@ function categorizeData(recipes) {
     .map(
       (cuisine) => `
     <a href="category_list.html?cuisine=${cuisine}">
-      <img class="icon" src="img/index/${cuisine.toLowerCase()}_icon.webp" alt="${cuisine} icon">
+      <img class="icon grow" src="img/index/${cuisine.toLowerCase()}_icon.webp" alt="${cuisine} icon">
       <p>${cuisine}</p>
     </a>
   `
@@ -51,7 +51,7 @@ function categorizeData(recipes) {
     .map(
       (mealType) => `
     <a href="category_list.html?mealType=${mealType}">
-      <img class="icon" src="img/index/${mealType.toLowerCase()}_icon.webp" alt="${mealType} icon">
+      <img class="icon grow" src="img/index/${mealType.toLowerCase()}_icon.webp" alt="${mealType} icon">
       <p>${mealType}</p>
     </a>
   `
@@ -79,7 +79,7 @@ function mostPopular(recipes) {
           (recipe) => `
         <div class="popular-item">
           <a href="single_recipe.html?id=${recipe.id}">
-            <img src="${recipe.image}" alt="${recipe.name}">
+            <img class="layer" src="${recipe.image}" alt="${recipe.name}">
             <h3 class="recipe_name">${recipe.name}</h3>
             <p class="rating">Rating: ${recipe.rating} / 5</p>
           </a>

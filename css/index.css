@@ -92,3 +92,22 @@ section,
   width: 150px;
   padding-bottom: 10px;
 }
+
+/* hover effects */
+.grow {
+  transition: 1s ease;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+.layer {
+  transition: 0.8s ease;
+}
+
+.layer:hover {
+  opacity: 0.5;
+  transition: 0.8s ease;
+}
