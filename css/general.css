@@ -9,6 +9,11 @@
   --black: #363636;
 }
 
+/*background color*/
+body {
+  background-color: var(--beige);
+}
+
 /* fonts  */
 h1 {
   font-family: salthouse, sans-serif;
