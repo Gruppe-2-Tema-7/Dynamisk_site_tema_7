@@ -94,6 +94,12 @@ section,
 
 .recipe_name {
   padding-top: 20px;
+  font-family: the-seasons, sans-serif;
+  font-weight: normal;
+}
+
+.rating {
+  font-weight: normal;
 }
 
 .grid_1-1,
