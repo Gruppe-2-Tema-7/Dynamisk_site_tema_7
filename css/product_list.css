@@ -8,20 +8,41 @@ img {
 }
 /*************** Reset ************/
 
-/************* Product List ************/
+/*Filter*/
+.filter_container {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+/* Product List */
 .product_list_container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
   width: 100%;
   margin-bottom: 5rem;
 }
 
+.product_list_container a {
+  text-decoration: none;
+  color: var(--black);
+  line-height: 2rem;
+}
+
+.product_card {
+  border: 1px solid var(--grey); /* Tilføjer en firkantet kant */
+  box-sizing: border-box;
+}
+
+.card_text {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 @media (min-width: 800px) {
   .product_list_container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
   }
 }
 
