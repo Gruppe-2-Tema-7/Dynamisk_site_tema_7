@@ -91,6 +91,11 @@ section,
 
 .welcome_img {
   padding-top: 120px;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vw;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 @media (min-width: 900px) {
@@ -104,6 +109,8 @@ section,
 
   .welcome_img {
     order: -1;
+    width: 100%;
+    height: 100%;
   }
 
   #welcome {
