@@ -80,8 +80,8 @@ function mostPopular(recipes) {
         <div class="popular-item">
           <a href="single_recipe.html?id=${recipe.id}">
             <img src="${recipe.image}" alt="${recipe.name}">
-            <h3>${recipe.name}</h3>
-            <p>Rating: ${recipe.rating} / 5</p>
+            <h3 class="recipe_name">${recipe.name}</h3>
+            <p class="rating">Rating: ${recipe.rating} / 5</p>
           </a>
         </div>
       `
