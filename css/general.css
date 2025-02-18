@@ -17,10 +17,8 @@ html {
 }
 
 body {
-  max-inline-size: 1200px;
   margin-inline: auto;
   background-color: var(--beige);
-  padding: 0 60px;
 }
 
 /* colors */
