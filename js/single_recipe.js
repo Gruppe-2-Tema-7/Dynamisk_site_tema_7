@@ -3,53 +3,54 @@ const recipeId = new URLSearchParams(window.location.search).get("id");
 const navBack = document.querySelector(".back");
 const popular = document.querySelector(".popular");
 
-fetch(`https://dummyjson.com/recipes/1`)
+fetch(`https://dummyjson.com/recipes/${recipeId}`)
   .then((response) => response.json())
   .then((data) => showRecipe(data));
 
 function showRecipe(recipe) {
-  one_recipe.innerHTML = `
+  // <div class="intro_text">
+  one_recipe.innerHTML = ` 
     <section class="intro">
-    <div class="intro_text">
+        
       <h1>${recipe.name}</h1>
-      
-      
+    
       <figure>
-      <img src="${recipe.image}" alt="Image of ${recipe.name}"></img>
-      </figure>
-      
+      <img class="single_img" src="${recipe.image}" alt="Image of ${recipe.name}"></img>
+      </figure> 
+    <div class="intro_text">  
+      <h3>Difficulty: ${recipe.difficulty}</h3>
 
-      <h2>Difficulty: ${recipe.difficulty}</h2>
       <div>
       <h2>Ingredients</h2>
       <ul>
       ${recipe.ingredients.map((ingredient) => `<li>${ingredient}</li>`).join("")}
       </ul>  
-      </div>    
+      </div>
     </div>
 
-    
     </section>
 
-    <section class="details">
+    <section class="details">    
       <dl>
+       <img class="icon" src="img/single_icons/food-preparation.png" alt="food-preparation">
         <dt>Prepping:</dt>
         <dd>${recipe.prepTimeMinutes} min</dd>
       </dl>
 
       <dl>
+        <img class="icon" src="img/single_icons/cooking-pot.png" alt="cooking">
         <dt>Cooking:</dt>
         <dd>${recipe.cookTimeMinutes} min</dd>
       </dl>
 
       <dl>
-        <i class="fa-light fa-plate-utensils"></i>
+        <img class="icon" src="img/single_icons/restaurant.png" alt="serving">
         <dt>Servings:</dt>
         <dd>${recipe.servings}<dd/>
       </dl>
 
       <dl>
-        <i class="fa-regular fa-star"></i>        
+        <img class="icon" src="img/single_icons/star.png" alt="star">
         <dt>Rating:</dt>
         <dd>${recipe.rating} / 5</dd>        
       </dl>
@@ -63,7 +64,7 @@ function showRecipe(recipe) {
     </section>
   `;
 
-  navBack.innerHTML = `<button class=back_button button>Go back</button>`;
+  navBack.innerHTML = `<button class="button back_button">Go back</button>`;
   document.querySelector(".back_button").addEventListener("click", () => {
     window.history.back();
   });
@@ -80,7 +81,7 @@ function mostPopular(recipes) {
     .slice(0, 3); //så der kun er 3
 
   popular.innerHTML = ` 
-    <h2>Most popular</h2>
+    <h2 class="most_popular">Most popular</h2>
     <div class="popular-grid">
       ${topRecipes
         .map(
@@ -89,7 +90,10 @@ function mostPopular(recipes) {
           <a href="single_recipe.html?id=${recipe.id}">
             <img src="${recipe.image}" alt="${recipe.name}">
             <h3>${recipe.name}</h3>
-            <p>⭐Rating: ${recipe.rating} / 5</p>
+            <dl>
+              <dt>Rating:</dt>
+              <dd>${recipe.rating} / 5</dd>        
+            </dl>          
           </a>
         </article>
       `

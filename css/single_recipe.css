@@ -1,19 +1,7 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
-  background-color: var(--beige);
-}
-
-/* body {
-  padding: 4rem;
-} */
-
-h1,
-h2 {
+h1 {
   color: var(--brown);
 }
 
-p,
 dl,
 li {
   color: var(--black);
@@ -22,44 +10,74 @@ li {
   line-height: 2.5rem;
 }
 
-.intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-left: 4rem;
-}
-
-.intro_text {
+/* .intro_text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-img {
-  max-width: 100%;
-  object-fit: cover;
-  /* aspect-ratio: 9/16; */
-}
-
-/* h1 {
-  order: 0;
 } */
 
-figure img {
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+h1,
+h2,
+h3 {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+/* .intro_text {
+  display: grid;
+  columns: 1/2;
+  grid-row: 1/2;
+} */
+
+img {
+  object-fit: cover;
+}
+
+ul,
+ol {
+  padding-left: 2rem;
+}
+
+.single_img,
+figure {
   height: 700px;
   display: grid;
+  grid-row: span 2;
+  /* overflow: hidden; */
   grid-column: 2/3;
 }
 
+/* .single_img {
+  position: absolute;
+} */
+
 .details {
-  display: flex;
-  gap: 180px;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  /* justify-content: space-between; */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  /* flex-wrap: wrap; */
 }
 
-/* .fa-light {
-  font-weight: 500;
-} */
+.icon {
+  width: 65px;
+}
+
+dd {
+  font-weight: 700;
+}
+
+.most_popular {
+  margin-top: 4rem;
+}
 
 .popular-grid {
   display: flex;
@@ -67,15 +85,41 @@ figure img {
   justify-content: center;
 }
 
+h3 {
+  font-family: the-seasons, sans-serif;
+  /* line-height: 2.4rem; */
+}
+
 @media (max-width: 768px) {
-  .intro {
+  body {
+    padding: 1rem;
+  }
+  .intro,
+  .popular-grid {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 1rem;
+    /* gap: 10px; */
+  }
+
+  .single_img,
+  figure {
+    height: 100%;
+    display: block; /* Prevent grid layout */
+    grid-row: span 1;
+    grid-column: auto;
+  }
+
+  .single_img {
+    position: relative;
+  }
+
+  .details {
+    grid-template-columns: 1fr 1fr;
   }
 
   dl,
   li {
     font-size: 1.2rem;
+    line-height: 2rem;
   }
 }
