@@ -5,24 +5,26 @@ let mealTypeContainer = document.querySelector(".grid_1-1-1-1");
 
 // Fetch recipe data from the API
 fetch(`https://dummyjson.com/recipes`)
-  .then((response) => response.json())
-  .then((data) => categorizeData(data.recipes)); // Extract the `recipes` array from the response
+  .then((response) => response.json()) // Convert response to JSON
+  .then((data) => categorizeData(data.recipes)); // Extract "recipes" array from the response
 
 function categorizeData(recipes) {
-  console.log("Mine data er:", recipes); // Debugging: Logs fetched data
+  console.log("Mine data er:", recipes);
 
-  // **Get unique difficulties from the recipes**
+  // Get specific categories and get unique values (not repeat)
+  // -difficulties
   const uniqueDifficulties = [...new Set(recipes.map((recipe) => recipe.difficulty))];
 
-  // **Filter allowed cuisines (only Italian, Greek, Mediterranean)**
+  // -cuisines
   const allowedCuisines = ["Italian", "Greek", "Mediterranean"];
-  const uniqueCuisines = [...new Set(recipes.map((recipe) => recipe.cuisine))].filter((cuisine) => allowedCuisines.includes(cuisine));
+  const uniqueCuisines = [...new Set(recipes.map((recipe) => recipe.cuisine))].filter((cuisine) => allowedCuisines.includes(cuisine)); //new Set() removes duplicates, ensuring unique value
 
-  // **Filter allowed meal types (Breakfast, Lunch, Dinner, Dessert)**
+  // -meal type
   const allowedMealTypes = ["Breakfast", "Lunch", "Dinner", "Dessert"];
   const uniqueMealTypes = [...new Set(recipes.flatMap((recipe) => recipe.mealType))].filter((mealType) => allowedMealTypes.includes(mealType));
 
-  // **Generate HTML for Difficulty**
+  // Generate HTML
+  // - difficulty
   difficultyContainer.innerHTML = uniqueDifficulties
     .map(
       (difficulty) => `
@@ -34,7 +36,7 @@ function categorizeData(recipes) {
     )
     .join("");
 
-  // **Generate HTML for Cuisine**
+  // - cuisine
   cuisineContainer.innerHTML = uniqueCuisines
     .map(
       (cuisine) => `
@@ -46,7 +48,7 @@ function categorizeData(recipes) {
     )
     .join("");
 
-  // **Generate HTML for Meal Type**
+  // - meal type
   mealTypeContainer.innerHTML = uniqueMealTypes
     .map(
       (mealType) => `
@@ -59,7 +61,7 @@ function categorizeData(recipes) {
     .join("");
 }
 
-// Sort recipes by rating in descending order and get top 3
+// Popular recipes: get top 3 (rating in descending order)
 const popular = document.querySelector(".popular");
 
 fetch(`https://dummyjson.com/recipes`)

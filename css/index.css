@@ -38,9 +38,10 @@ section,
 .recipe_name {
   font-family: the-seasons, sans-serif;
   padding-top: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-.recipe_name,
 .rating {
   font-weight: initial;
 }
@@ -54,6 +55,12 @@ section,
   justify-items: center;
   text-align: center;
   padding-top: 20px;
+}
+
+.grid_1-1 p,
+.grid_1-1-1 p,
+.grid_1-1-1-1 p {
+  text-transform: lowercase;
 }
 
 @media (min-width: 900px) {
