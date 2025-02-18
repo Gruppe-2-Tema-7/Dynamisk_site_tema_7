@@ -14,12 +14,43 @@
 
 <body>
     <header>
-        <img src="img/product_list/product_list_hero.webp" alt="hero">
+        <div class="mobil_menu">
+            <a class="logo" href="index.html">
+                <img class="logo_m" src="img/1x/logo.png" alt="chop chop logo"> </a>
+
+            <ul class="menu">
+                <li><a href="index.html">home</a></li>
+                <li><a href="product_list.html">recipes</a></li>
+                <li><a href="about_us.html">about us</a></li>
+            </ul>
+
+            <div class="burger-menu" id="burgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+
+        <div class="desktop_menu">
+            <a href="product_list.html">
+                <p>recipes</p>
+            </a>
+
+            <a class="logo_d" href="index.html"><img src="img/1x/logo.png" alt="chop chop logo"></a>
+
+            <a href="about_us.html">
+                <p>about us</p>
+            </a>
+        </div>
     </header>
+
 
     <main>
 
-        <h3>CUISINE</h3>
+        <h3>RECIPES</h3>
+
+        <p>CUISINE:</p>
         <div class="filter_container">
             <button class="button_product_list " data-cuisine="ALL"> ALL </button>
             <button class="button_product_list " data-cuisine="Italian"> Italian </button>
