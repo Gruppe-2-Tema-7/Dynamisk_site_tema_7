@@ -1,9 +1,6 @@
 const myRecipes = new URLSearchParams(window.location.search).get("recipes");
 
 const productContainer = document.querySelector(".product_list_container");
-const overskirft = document.querySelector("h2");
-
-overskirft.innerHTML = myRecipes;
 
 document.querySelectorAll("button").forEach((knap) => knap.addEventListener("click", showFiltered));
 
@@ -60,3 +57,13 @@ function showFiltered() {
     showList(fraction);
   }
 }
+
+document.querySelectorAll(".button_product_list").forEach((button) => {
+  button.addEventListener("click", function () {
+    // Fjern "active" fra alle knapper
+    document.querySelectorAll(".button_product_list").forEach((btn) => btn.classList.remove("active"));
+
+    // Tilføj "active" til den klikkede knap
+    this.classList.add("active");
+  });
+});
