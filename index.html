@@ -20,17 +20,19 @@
 
     </header>
     <main>
-        <section>
+        <section id="intro">
             <div class="intro">
-                <img class="title" src="img/index/chop_chop.webp" alt="Title with knife">
+                <img class="title grow" src="img/index/chop_chop.webp" alt="Title with knife">
                 <img class="background" src="img/index/background.webp" alt="Beige background with lemons">
             </div>
-            <a href="#welcome" class="button arrow_down" aria-label="Scroll down to introduction">
-                <i class="fa-solid fa-angles-down"></i>
-            </a>
+            <div class="arrow_container">
+                <a href="#welcome" class="button arrow_down" aria-label="Scroll down to introduction">
+                    <i class="fa-solid fa-angles-down"></i>
+                </a>
+            </div>
         </section>
         <section id="welcome">
-            <div>
+            <div class="welcome">
                 <h2>Welcome to Chop Chop!</h2>
                 <p>Love Mediterranean food? So do we! At Chop Chop, we bring you a handpicked selection of authentic
                     recipes from Italy, Greece, and across the Mediterranean.
@@ -43,11 +45,13 @@
                     So grab your chopping board and let's get cooking! The flavors of the Mediterranean are just a few
                     chops away.
                 </p>
-                <a class="button" href="about_us.html" aria-label="Go to about us page">Go to about us</a>
+                <div class="button_container">
+                    <a class="button" href="about_us.html" aria-label="Go to about us page">Go to about us</a>
+                </div>
             </div>
             <img class="welcome_img" src="img/index/hands.webp" alt="Chef hands">
         </section>
-        <section>
+        <section id="popular">
             <h2 class="popular_title">Most popular</h2>
             <div class="slideshow">
                 <div class="popular">
