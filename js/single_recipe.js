@@ -8,7 +8,6 @@ fetch(`https://dummyjson.com/recipes/${recipeId}`)
   .then((data) => showRecipe(data));
 
 function showRecipe(recipe) {
-  // <div class="intro_text">
   one_recipe.innerHTML = ` 
     <section class="intro">
         
