@@ -228,3 +228,127 @@ header {
   text-decoration: none;
   color: var(--beige);
 }
+
+@media (min-width: 800px) {
+  .desktop_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1rem;
+  }
+
+  .logo_d {
+    max-width: 10rem;
+  }
+
+  .mobil_menu {
+    display: none;
+  }
+}
+
+/* footer */
+footer {
+  position: relative;
+  background-color: var(--green);
+  min-height: 30vw;
+  margin-top: 5rem;
+  padding: 3rem;
+
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr;
+}
+
+.beige {
+  color: var(--beige);
+  margin-bottom: 5vh;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+.yelp img,
+.tiktok img,
+.insta img {
+  position: absolute;
+  cursor: pointer;
+  max-width: 10vw;
+  gap: 10px;
+  height: auto;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+.yelp .base-icon,
+.tiktok .base-icon,
+.insta .base-icon {
+  opacity: 1;
+}
+
+.yelp .hover-icon,
+.tiktok .hover-icon,
+.insta .hover-icon {
+  opacity: 0;
+}
+
+.yelp:hover .base-icon,
+.tiktok:hover .base-icon,
+.insta:hover .base-icon {
+  opacity: 0;
+}
+
+.yelp:hover .hover-icon,
+.tiktok:hover .hover-icon,
+.insta:hover .hover-icon {
+  opacity: 1;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  color: var(--beige);
+}
+
+.info p {
+  color: var(--beige);
+}
+
+.info a {
+  text-decoration: none;
+  color: var(--beige);
+  font-weight: initial;
+}
+
+.info a:hover {
+  text-decoration: none;
+  color: var(--brown);
+}
+
+.fav {
+  min-width: 50%;
+  max-width: 10vw;
+  z-index: 1100;
+  justify-self: end;
+
+  /** animation **/
+  animation-name: pulse_kf;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse_kf {
+  0%,
+  100% {
+    transform: scale(0.89); /*start and end at original size*/
+  }
+  50% {
+    transform: scale(0.8); /*scales up*/
+  }
+}
