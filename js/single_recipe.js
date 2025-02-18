@@ -63,7 +63,7 @@ function showRecipe(recipe) {
     </section>
   `;
 
-  navBack.innerHTML = `<button class=back_button>Go back</button>`;
+  navBack.innerHTML = `<button class=back_button button>Go back</button>`;
   document.querySelector(".back_button").addEventListener("click", () => {
     window.history.back();
   });
