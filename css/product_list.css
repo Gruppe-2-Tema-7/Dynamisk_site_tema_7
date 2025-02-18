@@ -5,7 +5,9 @@ img {
 }
 * {
   margin: 0;
+  box-sizing: border-box;
 }
+
 /*************** Reset ************/
 
 /*Filter*/
@@ -32,9 +34,9 @@ img {
 .product_card {
   display: grid;
   grid-template-rows: subgrid;
-  grid-row: span 3;
-  border: 1px solid var(--grey); /* Tilføjer en firkantet kant */
+  border: 1px solid var(--grey);
   box-sizing: border-box;
+  width: 100%; /* Eller en specifik max-width */
 }
 
 .product_card img {
@@ -44,22 +46,39 @@ img {
 }
 
 .product_card_indhold {
-  padding: 1rem;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* Sørger for vertikal layout */
+  justify-content: space-between; /* Skubber .card_text til bunden */
 }
 
-.card_text p {
-  font-size: 1rem;
-}
+/* Grid-layout for tekstindholdet */
 .card_text {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Sikrer 3 lige store kolonner */
-  gap: 10px; /* Afstand mellem kolonnerne */
-  text-align: center; /* Centrerer teksten */
+  grid-template-columns: repeat(3, 1fr); /* 3 lige store kolonner */
+  gap: 10px; /* Afstand mellem kolonner */
+  word-wrap: break-word; /* Bryder lange ord op */
+  overflow-wrap: break-word; /* Sørger for at lange ord brydes */
+  margin-top: auto; /* Giver lidt plads over teksten */
 }
 
+/* Sørg for at teksten i hver div bliver centreret */
 .card_text div {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  box-sizing: border-box; /* Sørger for at padding ikke påvirker bredden */
+}
+
+/* Stilen for p-tagget */
+.card_text p {
+  font-size: 0.8rem;
+  margin: 0; /* Fjern unødvendige marginer */
+  text-transform: lowercase;
+  font-weight: 500;
+}
+
+.product_name {
+  font-weight: 1000;
 }
