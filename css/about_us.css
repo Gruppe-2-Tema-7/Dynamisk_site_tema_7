@@ -1,0 +1,376 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/** HEADER **/ /*Husk at centere H! i general og gice korrekt farve til overskrifter*/
+.desktop_menu {
+  display: none;
+} /* viser ikke den menu der er gældende i desktop */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+  z-index: 999;
+  width: 100%;
+}
+
+.logo_m {
+  width: 10rem;
+}
+
+/** BURGERMENU **/
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  z-index: 1000;
+  position: absolute;
+  top: 35px;
+  right: 35px;
+}
+
+.burger-menu span {
+  display: block;
+  height: 3px;
+  background-color: var(--black);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.burger-menu:hover span {
+  background-color: var(--brown);
+}
+
+.menu.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--green);
+  width: 100vw;
+  height: 100vh;
+
+  font-family: bryant-web, sans-serif;
+  gap: 2rem;
+  z-index: 1000;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: var(--green);
+  z-index: 1000;
+  gap: 20px;
+  text-decoration: none;
+  list-style: none;
+  color: var(--black);
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-family: bryant-web, sans-serif;
+}
+
+.menu li a:hover {
+  text-decoration: none;
+  color: var(--beige);
+}
+
+/** BODY **/
+body {
+  background-color: var(--dark_beige);
+}
+
+/** MAIN **/
+
+.billedeTilvenstre,
+.billedeTilhøjre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tekstTilhøjre,
+.tekstTilvenstre {
+  text-align: left;
+  padding: 2vh;
+}
+
+.sektion_img {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+}
+
+.sektion_img:last-child {
+  order: -1;
+}
+
+/* FORMS */
+.forms {
+  margin-top: 5rem;
+  padding: 1rem;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  padding: 32px;
+  font-family: bryant-web, sans-serif;
+  color: var(--black);
+}
+
+.form-group {
+  &.full {
+    grid-column: 1 / -1;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-element {
+    appearance: none;
+    outline: none;
+    border: none;
+
+    display: block;
+    width: 100%;
+
+    border-radius: 8px;
+    padding: 12px 16px;
+    background-color: var(--beige);
+    transition: 0.4s;
+
+    &:focus {
+      box-shadow: 0px 0px 6px var(--brown);
+      background-color: var(--beige);
+    }
+  }
+
+  textarea {
+    resize: none;
+    min-height: 100px;
+    font-family: bryant-web, sans-serif;
+  }
+}
+
+.submit-group {
+  grid-column: 1 / -1;
+  justify-self: center;
+  text-align: right;
+  font-family: bryant-web, sans-serif;
+
+  input[type="submit"] {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+
+    padding: 1rem;
+    border-radius: 5rem;
+    color: var(--beige);
+    background-color: var(--brown);
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      /*skal ændres til nadias knap-component*/
+      color: var(--brown);
+      background-color: var(--beige);
+      font-family: bryant-web, sans-serif;
+    }
+  }
+}
+
+/** FOOTER **/
+footer {
+  position: relative;
+  background-color: var(--green);
+  min-height: 30vw;
+  margin-top: 5rem;
+  padding: 3rem;
+
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr;
+}
+
+.beige {
+  color: var(--beige);
+  margin-bottom: 5vh;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+.yelp img,
+.tiktok img,
+.insta img {
+  position: absolute;
+  cursor: pointer;
+  max-width: 10vw;
+  gap: 10px;
+  height: auto;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+.yelp .base-icon,
+.tiktok .base-icon,
+.insta .base-icon {
+  opacity: 1;
+}
+
+.yelp .hover-icon,
+.tiktok .hover-icon,
+.insta .hover-icon {
+  opacity: 0;
+}
+
+.yelp:hover .base-icon,
+.tiktok:hover .base-icon,
+.insta:hover .base-icon {
+  opacity: 0;
+}
+
+.yelp:hover .hover-icon,
+.tiktok:hover .hover-icon,
+.insta:hover .hover-icon {
+  opacity: 1;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  color: var(--beige);
+}
+
+.info a {
+  text-decoration: none;
+  color: var(--beige);
+}
+
+.info a:hover {
+  text-decoration: none;
+  color: var(--brown);
+}
+
+.fav {
+  min-width: 50%;
+  max-width: 10vw;
+  z-index: 1100;
+  justify-self: end;
+
+  /** animation **/
+  animation-name: pulse_kf;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse_kf {
+  0%,
+  100% {
+    transform: scale(0.8); /*start and end at original size*/
+  }
+  50% {
+    transform: scale(0.9); /*scales up*/
+  }
+}
+
+/** DESKTOP **/
+@media (min-width: 800px) {
+  /* HEADER */
+  .desktop_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1rem;
+  }
+
+  .logo_d {
+    max-width: 10rem;
+  }
+
+  .mobil_menu {
+    display: none;
+  }
+
+  /*MAIN - ZIGZAG*/
+  .billedeTilvenstre,
+  .billedeTilhøjre {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+
+  .tekstTilhøjre,
+  .tekstTilvenstre {
+    padding-top: 0;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  /** flytter teksterne til zigzag mønster**/
+  .tekstTilhøjre:last-child {
+    order: 0;
+  }
+  .sektion_img:last-child {
+    order: 0;
+  }
+
+  /** FOOTER **/
+  .info p {
+    margin-top: 10vh;
+  }
+
+  .yelp img,
+  .tiktok img,
+  .insta img {
+    max-height: 10rem;
+  }
+}
