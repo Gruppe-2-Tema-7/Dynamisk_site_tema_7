@@ -9,11 +9,24 @@ img {
 }
 
 /*************** Reset ************/
+body {
+  max-inline-size: 1600px;
+  margin-inline: auto;
+  padding: 0;
+}
+
+main {
+  max-inline-size: 1200px;
+  margin-inline: auto;
+  background-color: var(--beige);
+  padding: 0 60px;
+}
+
+/*Hero*/
 
 /*Filter*/
 .filter_container {
   margin-bottom: 4rem;
-  margin-top: 4rem;
 }
 
 /* Product List */
@@ -22,7 +35,7 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 20rem;
 }
 
 .product_list_container a {
@@ -43,6 +56,12 @@ img {
   width: 100%;
   aspect-ratio: 8/9;
   object-fit: cover;
+  transition: 0.8s ease;
+}
+
+.product_card img:hover {
+  opacity: 0.5;
+  transition: 0.8s ease;
 }
 
 .product_card_indhold {
@@ -81,4 +100,34 @@ img {
 
 .product_name {
   font-weight: 1000;
+}
+
+h3 {
+  font-family: the-seasons, sans-serif;
+  font-size: 2.5rem; /*til desktop*/
+  color: var(--brown);
+  margin-top: 3rem;
+}
+
+/*knapper*/
+.button_product_list {
+  position: relative;
+  color: var(--brown);
+  border: 2px solid var(--brown);
+  cursor: pointer;
+  transition: 1s ease;
+  padding: 10px;
+  border-radius: 20px;
+  top: 15px;
+}
+
+.button_product_list:hover {
+  background-color: var(--brown);
+  color: var(--beige);
+  transition: 1s ease;
+}
+
+.button_product_list.active {
+  background-color: var(--brown);
+  color: var(--beige);
 }
