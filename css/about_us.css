@@ -8,6 +8,13 @@ img {
   height: auto;
   display: block;
 }
+/*** håber det virker nu ****/
+/** BODY **/
+body {
+  background-color: var(--dark_beige);
+  margin: 0;
+  padding: 0;
+}
 
 /** HEADER **/ /*Husk at centere H! i general og gice korrekt farve til overskrifter*/
 .desktop_menu {
@@ -26,6 +33,11 @@ header {
 
 .logo_m {
   width: 10rem;
+}
+
+.current-page {
+  color: var(--black);
+  text-decoration: underline;
 }
 
 /** BURGERMENU **/
@@ -94,6 +106,7 @@ header {
   text-decoration: none;
   list-style: none;
   color: var(--black);
+  font-weight: initial;
 }
 
 .menu li a {
@@ -102,19 +115,29 @@ header {
   font-size: 1.5rem;
   padding: 1rem;
   font-family: bryant-web, sans-serif;
+  font-weight: initial;
 }
 
 .menu li a:hover {
   text-decoration: none;
   color: var(--beige);
-}
-
-/** BODY **/
-body {
-  background-color: var(--dark_beige);
+  font-weight: initial;
 }
 
 /** MAIN **/
+main {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.text_center {
+  text-align: center;
+}
 
 .billedeTilvenstre,
 .billedeTilhøjre {
@@ -287,9 +310,14 @@ footer {
   color: var(--beige);
 }
 
+.info p {
+  color: var(--beige);
+}
+
 .info a {
   text-decoration: none;
   color: var(--beige);
+  font-weight: initial;
 }
 
 .info a:hover {
@@ -313,10 +341,10 @@ footer {
 @keyframes pulse_kf {
   0%,
   100% {
-    transform: scale(0.8); /*start and end at original size*/
+    transform: scale(0.89); /*start and end at original size*/
   }
   50% {
-    transform: scale(0.9); /*scales up*/
+    transform: scale(0.8); /*scales up*/
   }
 }
 
