@@ -27,7 +27,6 @@ body {
 :root {
   --beige: #f3f2ee;
   --dark_beige: #fcf0ce;
-  --yellow: #ffd97c;
   --green: #9fb98c;
   --grey: #bebcb6;
   --brown: #674c40;
@@ -46,6 +45,12 @@ h2 {
   font-size: 2.5rem; /*til desktop*/
   color: var(--brown);
   padding-bottom: 10px;
+}
+
+h3 {
+  font-family: the-seasons, sans-serif;
+  font-size: 1.2rem; /*til desktop*/
+  font-weight: bold;
 }
 
 p {
@@ -99,4 +104,23 @@ a {
 
 .arrow_down {
   left: 50%;
+}
+
+/* hover effects */
+.grow {
+  transition: 1s ease;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+.layer {
+  transition: 0.8s ease;
+}
+
+.layer:hover {
+  opacity: 0.5;
+  transition: 0.8s ease;
 }

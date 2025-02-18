@@ -36,10 +36,7 @@ section,
 }
 
 .recipe_name {
-  font-family: the-seasons, sans-serif;
   padding-top: 20px;
-  font-weight: bold;
-  font-size: 1.2rem;
 }
 
 .rating {
@@ -98,23 +95,4 @@ section,
   height: 140px;
   width: 150px;
   padding-bottom: 10px;
-}
-
-/* hover effects */
-.grow {
-  transition: 1s ease;
-}
-
-.grow:hover {
-  transform: scale(1.1);
-  transition: 1s ease;
-}
-
-.layer {
-  transition: 0.8s ease;
-}
-
-.layer:hover {
-  opacity: 0.5;
-  transition: 0.8s ease;
 }
