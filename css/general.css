@@ -27,7 +27,6 @@ body {
 :root {
   --beige: #f3f2ee;
   --dark_beige: #fcf0ce;
-  --yellow: #ffd97c;
   --green: #9fb98c;
   --grey: #bebcb6;
   --brown: #674c40;
@@ -37,15 +36,20 @@ body {
 /* fonts  */
 h1 {
   font-family: salthouse, sans-serif;
-  font-size: 6rem; /*til desktop*/
   color: var(--black);
+  font-size: 3.5rem;
 }
 
 h2 {
   font-family: the-seasons, sans-serif;
-  font-size: 2.5rem; /*til desktop*/
   color: var(--brown);
   padding-bottom: 10px;
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-family: the-seasons, sans-serif;
+  font-weight: bold;
 }
 
 p {
@@ -58,29 +62,30 @@ a {
   text-decoration: none;
   color: var(--black);
   font-weight: bold;
+  font-size: 0.9rem;
 }
 
-@media (max-width: 800px) {
-  /* fonts  */
+@media (min-width: 900px) {
   h1 {
-    font-size: 3.5rem;
+    font-size: 6rem;
   }
 
   h2 {
-    font-size: 1.7rem;
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
   }
 
   p {
     font-size: 1.2rem;
   }
-
-  a {
-    font-size: 0.9rem;
-  }
 }
 
 /*knapper*/
-.button {
+.button,
+.arrow_down {
   position: relative;
   color: var(--brown);
   border: 2px solid var(--brown);
@@ -97,6 +102,29 @@ a {
   transition: 1s ease;
 }
 
-.arrow_down {
-  left: 50%;
+@media (min-width: 900px) {
+  .arrow_down {
+    padding: 16px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+  }
+}
+
+/* hover effects */
+.grow {
+  transition: 1s ease;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+
+.layer {
+  transition: 0.8s ease;
+}
+
+.layer:hover {
+  opacity: 0.5;
+  transition: 0.8s ease;
 }
