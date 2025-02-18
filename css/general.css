@@ -148,6 +148,17 @@ header {
   width: 10rem;
 }
 
+.current-page {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+.current-page_logo {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  border-radius: 0px;
+}
+
 /* burger menu */
 .burger-menu {
   display: flex;
