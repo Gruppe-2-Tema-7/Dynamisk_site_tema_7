@@ -229,7 +229,7 @@ header {
 
 .current-page {
   color: var(--black);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /** BURGERMENU **/
