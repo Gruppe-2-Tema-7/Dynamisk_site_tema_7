@@ -1,3 +1,15 @@
+@media (min-width: 769px) {
+  main {
+    margin-left: 4rem;
+  }
+
+  .details,
+  ol,
+  .popular-grid {
+    margin-right: 4rem;
+  }
+}
+
 h1 {
   color: var(--brown);
 }
@@ -7,7 +19,7 @@ li {
   color: var(--black);
   font-family: bryant-web, sans-serif;
   font-size: 1.5rem; /*til desktop*/
-  line-height: 2.5rem;
+  /* line-height: 2.5rem; */
 }
 
 /* .intro_text {
@@ -29,6 +41,11 @@ h3 {
   padding-bottom: 0.5rem;
 }
 
+h3 {
+  font-family: the-seasons, sans-serif;
+  font-size: 1.8rem;
+}
+
 /* .intro_text {
   display: grid;
   columns: 1/2;
@@ -42,15 +59,37 @@ img {
 ul,
 ol {
   padding-left: 2rem;
+  line-height: 2.5rem;
 }
+
+/* Container for the image */
+/* figure {
+  position: relative;
+  /* width: 100%; Ensures it takes the full width of its grid column */
+/* height: 700px; /* Adjust this based on your layout */
+/* overflow: hidden; /* Hides the overflowing right side */
+/* display: grid;
+  grid-row: span 2;
+  grid-column: 2/3;
+}  */
+
+/* Style the image inside the figure */
+/* .single_img {
+  width: 100%; /* Expands beyond its container to cut off the right side 
+  height: 100%;
+  object-fit: cover;
+}  */
 
 .single_img,
 figure {
   height: 700px;
+  width: 100%;
   display: grid;
   grid-row: span 2;
-  /* overflow: hidden; */
+  overflow: hidden;
   grid-column: 2/3;
+  object-fit: cover;
+  object-position: -80% 0%;
 }
 
 /* .single_img {
@@ -67,11 +106,21 @@ figure {
   /* flex-wrap: wrap; */
 }
 
-.icon {
-  width: 65px;
+.details dl {
+  display: flex;
+  flex-direction: column; /* Stack elements inside each dl */
+  align-items: center; /* Center everything inside each dl */
 }
 
-dd {
+.icon {
+  width: 50px;
+}
+
+dt {
+  font-size: 1.2rem;
+}
+
+.details dd {
   font-weight: 700;
 }
 
@@ -85,14 +134,32 @@ dd {
   justify-content: center;
 }
 
-h3 {
-  font-family: the-seasons, sans-serif;
+dl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popular-item h3 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.popular-item dd {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.popular-item dt {
+  font-weight: 400;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
-  body {
+  main {
     padding: 1rem;
   }
+
   .intro,
   .popular-grid {
     display: grid;
@@ -100,9 +167,18 @@ h3 {
     /* gap: 10px; */
   }
 
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
   .single_img,
   figure {
     height: 100%;
+    width: 100%;
     display: block; /* Prevent grid layout */
     grid-row: span 1;
     grid-column: auto;
@@ -116,11 +192,20 @@ h3 {
     grid-template-columns: 1fr 1fr;
   }
 
+  .icon {
+    width: 30px;
+  }
+
   dl,
   li {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 2rem;
   }
+}
+
+.flaticon a {
+  font-size: 0.5rem;
+  color: var(--grey);
 }
 
 /** HEADER **/ /*Husk at centere H! i general og gice korrekt farve til overskrifter*/
