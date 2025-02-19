@@ -35,8 +35,12 @@ header {
   width: 10rem;
 }
 
+.menu_hover:hover {
+  color: var(--green);
+}
+
 .current-page {
-  color: var(--black);
+  color: var(--brown);
   text-decoration: underline;
 }
 
@@ -53,6 +57,8 @@ header {
   position: absolute;
   top: 35px;
   right: 35px;
+
+  color: var(--black);
 }
 
 .burger-menu span {
@@ -226,17 +232,19 @@ form {
     outline: none;
     background: none;
 
-    padding: 1rem;
-    border-radius: 5rem;
-    color: var(--beige);
-    background-color: var(--brown);
+    color: var(--brown);
+    border: 2px solid var(--brown);
     cursor: pointer;
-    transition: 0.4s;
+    transition: 1s ease;
+    padding: 10px;
+    border-radius: 20px;
+    top: 35px;
 
     &:hover {
       /*skal ændres til nadias knap-component*/
-      color: var(--brown);
-      background-color: var(--beige);
+      background-color: var(--brown);
+      color: var(--beige);
+      transition: 1s ease;
       font-family: bryant-web, sans-serif;
     }
   }
