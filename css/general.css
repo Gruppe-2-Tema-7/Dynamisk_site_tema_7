@@ -146,8 +146,12 @@ header {
   width: 10rem;
 }
 
+.menu_hover:hover {
+  color: var(--green);
+}
+
 .current-page {
-  color: var(--black);
+  color: var(--brown);
   text-decoration: underline;
 }
 
@@ -170,6 +174,8 @@ header {
   position: absolute;
   top: 35px;
   right: 35px;
+
+  color: var(--black);
 }
 
 .burger-menu span {
