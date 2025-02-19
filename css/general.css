@@ -191,11 +191,9 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   list-style: none;
   padding: 0;
   margin: 0;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -203,7 +201,6 @@ header {
   background-color: var(--green);
   width: 100vw;
   height: 100vh;
-
   font-family: bryant-web, sans-serif;
   gap: 2rem;
   z-index: 1000;
