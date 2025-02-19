@@ -28,7 +28,7 @@ function categorizeData(recipes) {
   difficultyContainer.innerHTML = uniqueDifficulties
     .map(
       (difficulty) => `
-    <a href="category_list.html?difficulty=${difficulty}">
+    <a href="product_list.html?difficulty=${difficulty}">
       <img class="icon grow" src="img/index/${difficulty.toLowerCase()}_icon.webp" alt="${difficulty} icon">
       <p>${difficulty}</p>
     </a>
@@ -40,7 +40,7 @@ function categorizeData(recipes) {
   cuisineContainer.innerHTML = uniqueCuisines
     .map(
       (cuisine) => `
-    <a href="category_list.html?cuisine=${cuisine}">
+    <a href="product_list.html?cuisine=${cuisine}">
       <img class="icon grow" src="img/index/${cuisine.toLowerCase()}_icon.webp" alt="${cuisine} icon">
       <p>${cuisine}</p>
     </a>
@@ -52,7 +52,7 @@ function categorizeData(recipes) {
   mealTypeContainer.innerHTML = uniqueMealTypes
     .map(
       (mealType) => `
-    <a href="category_list.html?mealType=${mealType}">
+    <a href="product_list.html?mealType=${mealType}">
       <img class="icon grow" src="img/index/${mealType.toLowerCase()}_icon.webp" alt="${mealType} icon">
       <p>${mealType}</p>
     </a>
