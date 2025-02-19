@@ -16,7 +16,34 @@
 
 <body>
     <header>
-        <nav></nav>
+        <div class="mobil_menu">
+            <a class="logo" href="index.html">
+                <img class="logo_m" src="img/1x/logo.png" alt="chop chop logo"> </a>
+
+            <ul class="menu">
+                <li><a href="index.html">home</a></li>
+                <li><a href="product_list.html">recipes</a></li>
+                <li><a href="about_us.html">about us</a></li>
+            </ul>
+
+            <div class="burger-menu" id="burgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="desktop_menu">
+            <a href="product_list.html">
+                <p>recipes</p>
+            </a>
+
+            <a class="logo_d" href="index.html"><img src="img/1x/logo.png" alt="chop chop logo"></a>
+
+            <a href="about_us.html" class="current-page">
+                <p>about us</p>
+            </a>
+        </div>
     </header>
 
     <main>
@@ -26,7 +53,27 @@
     </main>
 
     <footer>
+        <h2 class="beige">Find us here:</h2>
+        <div class="icons">
+            <div class="yelp"><img class="base-icon" src="img/about_us/yelp_beige.svg" alt="yelp icon">
+                <img class="hover-icon" src="img/about_us/yelp_hover.svg" alt="yelp icon hover">
+            </div>
 
+            <div class="tiktok"><img class="base-icon" src="img/about_us/tiktok_beige.svg" alt="tiktok icon">
+                <img class="hover-icon" src="img/about_us/tiktok_hover.svg" alt="tiktok icon">
+            </div>
+
+            <div class="insta"><img class="base-icon" src="img/about_us/insta_beige.svg" alt="instagram icon">
+                <img class="hover-icon" src="img/about_us/insta_hover.svg" alt="instagram icon hover">
+            </div>
+        </div>
+
+        <div class="info">
+            <p>for contact information go to:
+                <br><a href="about_us.html">about us</a>
+            </p>
+            <img class="fav" src="img/about_us/hat_base.svg" alt="favicon_hat">
+        </div>
     </footer>
     <script src="js/components.js"></script>
     <script src="js/single_recipe.js"></script>
