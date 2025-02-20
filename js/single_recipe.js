@@ -31,25 +31,25 @@ function showRecipe(recipe) {
 
     <section class="details">    
       <dl>
-       <img class="icon" src="img/single_icons/food-preparation.png" alt="food-preparation">
+       <img class="icon" src="img/single_icons/food-preparation.svg" alt="food-preparation">
         <dt>Prepping:</dt>
         <dd>${recipe.prepTimeMinutes} min</dd>
       </dl>
 
       <dl>
-        <img class="icon" src="img/single_icons/cooking-pot.png" alt="cooking">
+        <img class="icon" src="img/single_icons/cooking-pot.svg" alt="cooking">
         <dt>Cooking:</dt>
         <dd>${recipe.cookTimeMinutes} min</dd>
       </dl>
 
       <dl>
-        <img class="icon" src="img/single_icons/restaurant.png" alt="serving">
+        <img class="icon" src="img/single_icons/restaurant.svg" alt="serving">
         <dt>Servings:</dt>
         <dd>${recipe.servings}<dd/>
       </dl>
 
       <dl>
-        <img class="icon" src="img/single_icons/star.png" alt="star">
+        <img class="icon" src="img/single_icons/star.svg" alt="star">
         <dt>Rating:</dt>
         <dd>${recipe.rating} / 5</dd>        
       </dl>
@@ -63,7 +63,7 @@ function showRecipe(recipe) {
     </section>
   `;
 
-  navBack.innerHTML = `<button class="button back_button">Go back</button>`;
+  navBack.innerHTML = `<a aria-label="Go back to previous page" class="button back_button">Go back</a>`;
   document.querySelector(".back_button").addEventListener("click", () => {
     window.history.back();
   });
@@ -75,7 +75,7 @@ fetch(`https://dummyjson.com/recipes`)
 
 function mostPopular(recipes) {
   const topRecipes = recipes.recipes
-    .filter((recipe) => ["Italian", "Mediterranean", "Greek"].includes(recipe.cuisine))
+    .filter((recipe) => ["Italian", "Mediterranean", "Greek"].includes(recipe.cuisine)) // filter der kun inkludere relevante cuisines fra objektet "cuisine"
     .sort((a, b) => b.rating - a.rating) // arrangere rækkefølgen af opskrifterne fra bedst rating først
     .slice(0, 3); //så der kun er 3
 
