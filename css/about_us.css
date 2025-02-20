@@ -156,7 +156,7 @@ h1 {
 .tekstTilhøjre,
 .tekstTilvenstre {
   text-align: left;
-  padding: 2vh;
+  padding: 60px 60px 60px;
 }
 
 .sektion_img {
@@ -314,5 +314,10 @@ input {
   }
   .sektion_img:last-child {
     order: 0;
+  }
+
+  /** FORMS **/
+  .forms {
+    padding: 60px 60px 60px;
   }
 }
