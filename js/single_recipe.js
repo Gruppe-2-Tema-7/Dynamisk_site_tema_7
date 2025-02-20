@@ -87,7 +87,7 @@ function mostPopular(recipes) {
           (recipe) => `
         <article class="popular-item">
           <a href="single_recipe.html?id=${recipe.id}">
-            <img src="${recipe.image}" alt="${recipe.name}">
+            <img class="layer" src="${recipe.image}" alt="${recipe.name}">
             <h3>${recipe.name}</h3>
             <dl class="rating_popular">
               <dt>Rating:</dt>
