@@ -151,6 +151,8 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  padding: 60px 60px 0;
 }
 
 .tekstTilhøjre,
@@ -297,8 +299,6 @@ input {
   .billedeTilhøjre {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-left: 0;
-    margin-bottom: 2rem;
   }
 
   .tekstTilhøjre,
