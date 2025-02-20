@@ -50,3 +50,26 @@ function showList(data) {
     .join("");
   productContainer.innerHTML = markup;
 }
+
+//fået hjælp af chatgpt
+document.addEventListener("DOMContentLoaded", function () {
+  // Hent alle knapperne
+  const buttons = document.querySelectorAll(".button_product_list");
+
+  // Find den aktuelle kategori fra URL'en
+  const params = new URLSearchParams(window.location.search);
+  const activeCuisine = params.get("cuisine");
+
+  // Loop gennem alle knapper og tilføj 'active'-klassen til den rigtige
+  buttons.forEach((button) => {
+    if (button.href.includes(`cuisine=${activeCuisine}`) || (activeCuisine === null && button.href.includes("cuisine=All"))) {
+      button.classList.add("active");
+    }
+
+    // Gør knappen aktiv ved klik
+    button.addEventListener("click", function () {
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+});
