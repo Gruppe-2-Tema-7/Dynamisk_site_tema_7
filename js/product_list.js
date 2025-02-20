@@ -32,7 +32,7 @@ function showList(data) {
                                 <p>${product.difficulty}</p>
                             </div>
                             <div>
-                                <p>${product.rating} *</p>
+                                <p>${product.rating}/5</p>
                             </div>
                         </div>
                     </div>
