@@ -177,7 +177,7 @@ h1 {
 
 form {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr); /* To lige store kolonner */
   grid-gap: 16px;
   padding: 32px;
   font-family: bryant-web, sans-serif;
@@ -185,9 +185,14 @@ form {
 }
 
 .form-group {
-  &.full {
-    grid-column: 1 / -1;
-  }
+  display: flex;
+  flex-direction: column;
+}
+
+/* Subject og Message skal fylde hele bredden */
+.form-group.full {
+  grid-column: 1 / -1;
+}
 
   label {
     display: block;
@@ -221,14 +226,21 @@ form {
 }
 
 .submit-group {
-  grid-column: 1 / -1;
-  justify-self: center;
-  text-align: right;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   font-family: bryant-web, sans-serif;
 
-  input[type="submit"] {
+ color: var(--brown);
+    border: 2px solid var(--brown);
+    cursor: pointer;
+    transition: 1s ease;
+    padding: 10px;
+    border-radius: 20px;
+    top: 35px;
+}
+  .submit-group input[type="submit"] {
     appearance: none;
-    border: none;
     outline: none;
     background: none;
 
@@ -239,22 +251,21 @@ form {
     padding: 10px;
     border-radius: 20px;
     top: 35px;
+  }
 
-    &:hover {
-      /*skal ændres til nadias knap-component*/
-      background-color: var(--brown);
+  .submit-group input[type="submit"]:hover{
+    background-color: var(--brown);
       color: var(--beige);
       transition: 1s ease;
       font-family: bryant-web, sans-serif;
     }
-  }
-}
+
 
 /** FOOTER **/
 footer {
   position: relative;
   background-color: var(--green);
-  min-height: 30vw;
+  max-height: 70vw;
   margin-top: 5rem;
   padding: 3rem;
 
@@ -322,10 +333,9 @@ footer {
   color: var(--beige);
 }
 
-.info a {
+.info p a {
   text-decoration: none;
   color: var(--beige);
-  font-weight: initial;
 }
 
 .info a:hover {
@@ -400,13 +410,26 @@ footer {
   }
 
   /** FOOTER **/
+  footer {
+    max-height: 45vw;
+  }
+
   .info p {
     margin-top: 10vh;
+    color: var(--beige);
+    font-size: 1.5rem;
+  }
+
+  .info p a {
+    text-decoration: none;
+    color: var(--beige);
+    font-size: 1.5rem;
   }
 
   .yelp img,
   .tiktok img,
   .insta img {
-    max-height: 10rem;
+    max-height: 8rem;
+    max-width: 6rem;
   }
 }
