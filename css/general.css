@@ -280,6 +280,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .yelp img,
@@ -372,9 +373,9 @@ footer {
   }
 
   .info p {
-    margin-top: 10vh;
     color: var(--beige);
     font-size: 1.5rem;
+    margin-top: 7rem;
   }
 
   .info p a {
