@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore delicious recipes at Chop Chop! Browse by cuisine and discover Mediterranean, Italian, and Greek dishes. Find your next favorite meal today!">
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.svg">
@@ -11,9 +13,11 @@
     <link rel="manifest" href="favicon_io/site.webmanifest">
 
     <title>Recipes</title>
+
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/product_list.css">
     <link rel="stylesheet" href="https://use.typekit.net/dvq4fnb.css">
+
 </head>
 
 
@@ -25,9 +29,9 @@
                 <img class="logo_m" src="img/logo/logo.svg" alt="chop chop logo"> </a>
 
             <ul class="menu">
-                <li><a href="index.html">home</a></li>
-                <li class="current-page"><a href="product_list.html">recipes</a></li>
-                <li><a href="about_us.html">about us</a></li>
+                <li><a href="index.html" aria-label="Go to Home page">home</a></li>
+                <li class="current-page"><a href="product_list.html" aria-label="Go to Recipes page">recipes</a></li>
+                <li><a href="about_us.html" aria-label="Go to About Us page">about us</a></li>
             </ul>
 
             <div class="burger-menu" id="burgerMenu">
@@ -38,13 +42,14 @@
         </div>
 
         <div class="desktop_menu">
-            <a href="product_list.html" class="current-page">
+            <a class="current-page" href="product_list.html" aria-label="Go to Recipes page">
                 <p class="menu_hover">recipes</p>
             </a>
 
-            <a class="logo_d" href="index.html"><img src="img/logo/logo.svg" alt="chop chop logo"></a>
+            <a class="logo_d" href="index.html" aria-label="Go to Home page"><img src="img/logo/logo.svg"
+                    alt="chop chop logo"></a>
 
-            <a href="about_us.html">
+            <a href="about_us.html" aria-label="Go to About Us page">
                 <p class="menu_hover">about us</p>
             </a>
         </div>
@@ -55,11 +60,12 @@
 
         <h1>RECIPES</h1>
         <div class="filter_container">
-            <a href="?cuisine=All" class="button_product_list"> ALL </a>
-            <a href="?cuisine=Italian" class="button_product_list"> Italian </a>
-            <a href="?cuisine=Mediterranean" class="button_product_list " data-cuisine="Mediterranean"> Mediterranean
+            <a href="?cuisine=All" class="button_product_list" aria-label="go to recipes all"> ALL </a>
+            <a href="?cuisine=Italian" class="button_product_list" aria-label="go to recipes italian"> Italian </a>
+            <a href="?cuisine=Mediterranean" class="button_product_list " aria-label="go to recipes mediterranean">
+                Mediterranean
             </a>
-            <a href="?cuisine=Greek" class="button_product_list " data-cuisine="Greek"> Greek </a>
+            <a href="?cuisine=Greek" class="button_product_list " aria-label="go to recipes greek"> Greek </a>
         </div>
 
         <div class="product_list_container">
