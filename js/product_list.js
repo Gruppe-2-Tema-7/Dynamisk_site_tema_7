@@ -1,4 +1,9 @@
-const myRecipes = new URLSearchParams(window.location.search).get("recipes");
+const cuisine = new URLSearchParams(window.location.search).get("cuisine");
+
+let endpoint = `https://dummyjson.com/recipes/?limit=50`;
+if (cuisine != "All") {
+  endpoint = `https://dummyjson.com/recipes/tag/${cuisine}?limit=50`;
+}
 
 const productContainer = document.querySelector(".product_list_container");
 
@@ -6,7 +11,7 @@ document.querySelectorAll("button").forEach((knap) => knap.addEventListener("cli
 
 let allData;
 
-fetch(`https://dummyjson.com/recipes?limit=50`)
+fetch(endpoint)
   .then((response) => response.json())
   .then((data) => {
     allData = data.recipes; // Gem opskrifterne i allData
@@ -29,10 +34,11 @@ function showList(data) {
                                 <p>${product.prepTimeMinutes} min</p>
                             </div>
                             <div>
+                                <p>${product.tags}</p>
                                 <p>${product.difficulty}</p>
                             </div>
                             <div>
-                                <p>${product.rating} *</p>
+                                <p>${product.rating}/5</p>
                             </div>
                         </div>
                     </div>
@@ -44,26 +50,3 @@ function showList(data) {
     .join("");
   productContainer.innerHTML = markup;
 }
-
-function showFiltered() {
-  console.log("filter kører");
-  const filter = this.dataset.cuisine;
-  if (filter == "ALL") {
-    showList(allData);
-  } else {
-    console.log("not all kører");
-    let fraction = allData.filter((product) => product.cuisine === filter);
-    console.log("allData", allData);
-    showList(fraction);
-  }
-}
-
-document.querySelectorAll(".button_product_list").forEach((button) => {
-  button.addEventListener("click", function () {
-    // Fjern "active" fra alle knapper
-    document.querySelectorAll(".button_product_list").forEach((btn) => btn.classList.remove("active"));
-
-    // Tilføj "active" til den klikkede knap
-    this.classList.add("active");
-  });
-});

@@ -259,11 +259,11 @@ header {
   }
 }
 
-/* footer */
+/** FOOTER **/
 footer {
   position: relative;
   background-color: var(--green);
-  min-height: 30vw;
+  max-height: 60vw;
   margin-top: 5rem;
   padding: 3rem;
 
@@ -331,10 +331,9 @@ footer {
   color: var(--beige);
 }
 
-.info a {
+.info p a {
   text-decoration: none;
   color: var(--beige);
-  font-weight: initial;
 }
 
 .info a:hover {
@@ -362,5 +361,32 @@ footer {
   }
   50% {
     transform: scale(0.8); /*scales up*/
+  }
+}
+
+/** DESKTOP **/
+/** FOOTER **/
+@media (min-width: 800px) {
+  footer {
+    max-height: 45vw;
+  }
+
+  .info p {
+    margin-top: 10vh;
+    color: var(--beige);
+    font-size: 1.5rem;
+  }
+
+  .info p a {
+    text-decoration: none;
+    color: var(--beige);
+    font-size: 1.5rem;
+  }
+
+  .yelp img,
+  .tiktok img,
+  .insta img {
+    max-height: 8rem;
+    max-width: 6rem;
   }
 }

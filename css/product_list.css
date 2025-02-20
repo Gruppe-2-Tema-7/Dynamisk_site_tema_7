@@ -10,107 +10,6 @@ img {
 
 /*************** Reset ************/
 
-/* Header */
-.desktop_menu {
-  display: none;
-} /* viser ikke den menu der er gældende i desktop */
-
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 2rem;
-  z-index: 999;
-  width: 100%;
-}
-
-.logo_m {
-  width: 10rem;
-}
-
-/** BURGERMENU **/
-.burger-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-  margin-top: 15px;
-  z-index: 1000;
-  position: absolute;
-  top: 35px;
-  right: 35px;
-}
-
-.burger-menu span {
-  display: block;
-  height: 3px;
-  background-color: var(--black);
-  border-radius: 2px;
-  transition: 0.3s;
-}
-
-.burger-menu:hover span {
-  background-color: var(--brown);
-}
-
-.menu.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--green);
-  width: 100vw;
-  height: 100vh;
-
-  font-family: bryant-web, sans-serif;
-  gap: 2rem;
-  z-index: 1000;
-}
-
-.menu {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vw;
-  background-color: var(--green);
-  z-index: 1000;
-  gap: 20px;
-  text-decoration: none;
-  list-style: none;
-  color: var(--black);
-}
-
-.menu li a {
-  text-decoration: none;
-  color: var(--black);
-  font-size: 1.5rem;
-  padding: 1rem;
-  font-family: bryant-web, sans-serif;
-}
-
-.menu li a:hover {
-  text-decoration: none;
-  color: var(--beige);
-}
-/* Header */
-
 body {
   max-inline-size: 1600px;
   margin-inline: auto;
@@ -137,7 +36,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   width: 100%;
-  margin-bottom: 20rem;
+  margin-bottom: 10rem;
 }
 
 .product_list_container a {
@@ -148,10 +47,10 @@ main {
 
 .product_card {
   display: grid;
-  grid-template-rows: subgrid;
-  border: 1px solid var(--grey);
   box-sizing: border-box;
-  width: 100%; /* Eller en specifik max-width */
+  width: 100%;
+
+  background: #faf8f4;
 }
 
 .product_card img {
@@ -167,29 +66,21 @@ main {
 }
 
 .product_card_indhold {
-  box-sizing: border-box;
   padding: 10px;
-  display: flex;
-  flex-direction: column; /* Sørger for vertikal layout */
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
   justify-content: space-between; /* Skubber .card_text til bunden */
 }
 
 /* Grid-layout for tekstindholdet */
 .card_text {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 lige store kolonner */
-  gap: 10px; /* Afstand mellem kolonner */
-  word-wrap: break-word; /* Bryder lange ord op */
-  overflow-wrap: break-word; /* Sørger for at lange ord brydes */
-  margin-top: auto; /* Giver lidt plads over teksten */
-}
-
-/* Sørg for at teksten i hver div bliver centreret */
-.card_text div {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box; /* Sørger for at padding ikke påvirker bredden */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-top: auto;
+  justify-content: space-between;
+  padding-top: -0.35rem;
 }
 
 /* Stilen for p-tagget */
@@ -201,14 +92,9 @@ main {
 }
 
 .product_name {
-  font-weight: 1000;
-}
-
-h3 {
+  padding-top: 0.5rem;
   font-family: the-seasons, sans-serif;
-  font-size: 2.5rem; /*til desktop*/
-  color: var(--brown);
-  margin-top: 3rem;
+  font-weight: bold;
 }
 
 /*knapper*/
