@@ -277,10 +277,12 @@ footer {
 }
 
 .icons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 10em;
+  margin-bottom: 2rem;
 }
 
 .yelp img,
