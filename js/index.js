@@ -29,7 +29,7 @@ function categorizeData(recipes) {
     .map(
       (difficulty) => `
     <a href="product_list.html?difficulty=${difficulty}">
-      <img class="icon grow" src="img/index/${difficulty.toLowerCase()}_icon.webp" alt="${difficulty} icon">
+      <img class="icon grow" src="img/index/${difficulty.toLowerCase()}_icon.svg" alt="${difficulty} icon">
       <p>${difficulty}</p>
     </a>
   `
@@ -41,7 +41,7 @@ function categorizeData(recipes) {
     .map(
       (cuisine) => `
     <a href="product_list.html?cuisine=${cuisine}">
-      <img class="icon grow" src="img/index/${cuisine.toLowerCase()}_icon.webp" alt="${cuisine} icon">
+      <img class="icon grow" src="img/index/${cuisine.toLowerCase()}_icon.svg" alt="${cuisine} icon">
       <p>${cuisine}</p>
     </a>
   `
@@ -53,7 +53,7 @@ function categorizeData(recipes) {
     .map(
       (mealType) => `
     <a href="product_list.html?mealType=${mealType}">
-      <img class="icon grow" src="img/index/${mealType.toLowerCase()}_icon.webp" alt="${mealType} icon">
+      <img class="icon grow" src="img/index/${mealType.toLowerCase()}_icon.svg" alt="${mealType} icon">
       <p>${mealType}</p>
     </a>
   `
